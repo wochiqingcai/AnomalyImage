@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AnomalyImage</string>
+    <string-array name="tingwan_home_classify_name">
+        <item>飞行射击</item>
+        <item>体育棋牌</item>
+        <item>休闲益智</item>
+        <item>模拟经营</item>
+        <item>赛车竞速</item>
+        <item>角色冒险</item>
+        <item>动作格斗</item>
+        <item>策略战棋</item>
+    </string-array>
+</resources>

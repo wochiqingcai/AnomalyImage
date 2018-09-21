@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/include_anomaly__image_header"
+    android:baselineAligned="false">
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_first_quadrant_rotate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_third_quadrant"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_square"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/siv_first_quadrant_rotate"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_parallelogram"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/siv_first_quadrant_rotate"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_second_quadrant_rotate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/siv_square"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_second_third_quadrant"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/siv_first_quadrant_rotate"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_second_quadrant"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/siv_second_third_quadrant"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+    <com.example.library.ShapeImageView
+        android:id="@+id/siv_fourth_quadrant"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_toLeftOf="@+id/siv_second_third_quadrant"
+        android:layout_marginRight="13dp"
+        android:src="@drawable/bg"
+        android:scaleType="fitXY" />
+</RelativeLayout>

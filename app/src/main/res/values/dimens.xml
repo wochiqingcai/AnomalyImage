@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_5_dip">5dp</dimen>
+    <dimen name="size_10_dip">10dp</dimen>
+    <!-- 20+5+8+5+5+5+5 计算出整个布局中各image之间的总间隔-->
+    <dimen name="classify_top_cut_size">53dp</dimen>
+</resources>

@@ -1,0 +1,5 @@
+<root>
+    <item name='android.graphics.drawable.shapes.Shape void onResize(float, float)'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>
