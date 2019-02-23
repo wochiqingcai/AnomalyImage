@@ -50,6 +50,7 @@ public abstract class BaseShape extends Shape implements IShape {
     public String getText() {
         return text;
     }
+    //关闭蒙层
     public void closeMette() {
         mattePaint=null;
     }
