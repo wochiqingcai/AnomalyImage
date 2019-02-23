@@ -17,17 +17,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.library.proxy.IShape;
+
 public class ShapeImageView extends ImageView {
-
 	public static final String TAG = "ShapeImageView";
-
 	private ShapeDrawable mShapeDrawable;
-	private Paint mProgressPaint;
-
-	private BaseShape mShape;
-
+	private IShape mShape;
 	private boolean mIsShape;
-
 	private boolean mRebuildShape;
 	private OnShapeImageClickListener onShapeImageClickListener;
 
@@ -41,18 +37,10 @@ public class ShapeImageView extends ImageView {
 
 	public ShapeImageView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		init();
-	}
-
-	private void init() {
-		mProgressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-		mProgressPaint.setColor(Color.parseColor("#99000000"));
-		mProgressPaint.setStyle(Paint.Style.FILL);
-
 	}
 
 	//设置shape
-	public void setShap(BaseShape shape) {
+	public void setShap(IShape shape) {
 		mShape = shape;
 		mIsShape = true;
 		mRebuildShape = true;
@@ -73,7 +61,7 @@ public class ShapeImageView extends ImageView {
 			case MotionEvent.ACTION_DOWN:
 //				Toast.makeText(this.getContext(),"down",Toast.LENGTH_SHORT).show();
 				if(mShape.chackIn(event.getX(),event.getY())) {
-					if(mShape.mattePaint!=null) {
+					if(mShape.checkMattePaint()) {
 						mShape.setMatte(false);
 						invalidate();
 					}
@@ -84,13 +72,13 @@ public class ShapeImageView extends ImageView {
 				if(mShape.chackIn(event.getX(),event.getY())&&onShapeImageClickListener!=null) {
 					onShapeImageClickListener.onClickListener(this,getText());
 				}
-				if(!mShape.getMatte()&&mShape.mattePaint!=null) {
+				if(!mShape.getMatte()&&mShape.checkMattePaint()) {
 					mShape.setMatte(true);
 					invalidate();
 				}
 				return true;
 			case MotionEvent.ACTION_CANCEL:
-				if(!mShape.getMatte()&&mShape.mattePaint!=null) {
+				if(!mShape.getMatte()&&mShape.checkMattePaint()) {
 					mShape.setMatte(true);
 					invalidate();
 				}
@@ -135,13 +123,9 @@ public class ShapeImageView extends ImageView {
 				mShapeDrawable.getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);
 				mShapeDrawable.getPaint().setStyle(Paint.Style.FILL);
 				mShapeDrawable.getPaint().setShader(bitmapShader);
-				mShapeDrawable.setShape(mShape);
+				mShapeDrawable.setShape(mShape.getShape());
 			}
-
-			if (mShape instanceof BaseShape) {
-				mShape.setRect(bounds);
-			}
-
+			mShape.setRect(bounds);
 			int paddingTop = getPaddingTop();
 			int paddingLeft = getPaddingLeft();
 

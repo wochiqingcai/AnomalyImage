@@ -1,8 +1,9 @@
-package com.example.library;
+package com.example.library.shape;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.shapes.Shape;
 import android.text.TextUtils;
 
 /**
@@ -10,15 +11,13 @@ import android.text.TextUtils;
  */
 
 public class TriangleShape extends BaseShape {
-
+    protected TriangleShape.TriangleType triangleType=TriangleShape.TriangleType.TRIANGLE_TYPE_FIRST_QUADRANT;//三角形类型
     public enum TriangleType {
         TRIANGLE_TYPE_FIRST_QUADRANT, TRIANGLE_TYPE_SECOND_QUADRANT, TRIANGLE_TYPE_THIRD_QUADRANT, TRIANGLE_TYPE_SECOND_THIRD_QUADRANT, TRIANGLE_TYPE_FOURTH_QUADRANT
     }
-
-    public TriangleShape(Context context) {
-        initView(context);
+    public TriangleShape(Context context){
+        super(context);
     }
-
     @Override
     public void draw(Canvas canvas, Paint paint) {
         if (rect == null || rect.width() <= 0 || rect.height() <= 0) {
@@ -138,5 +137,13 @@ public class TriangleShape extends BaseShape {
         }
 
         return false;
+    }
+
+    public void setTriangleType(TriangleShape.TriangleType triangleType) {
+        this.triangleType = triangleType;
+    }
+    @Override
+    public Shape getShape() {
+        return null;
     }
 }

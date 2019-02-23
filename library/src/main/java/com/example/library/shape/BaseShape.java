@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.library.shape;
 
 
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.shapes.Shape;
 import android.text.TextUtils;
+
+import com.example.library.R;
+import com.example.library.proxy.IShape;
 
 public abstract class BaseShape extends Shape implements IShape {
     protected Path path=new Path();
@@ -19,11 +22,11 @@ public abstract class BaseShape extends Shape implements IShape {
     protected float scale = -1f;
     protected Context context;
     protected boolean needMatte = true;//点击隐藏显示蒙层开关
-    protected TriangleShape.TriangleType triangleType=TriangleShape.TriangleType.TRIANGLE_TYPE_FIRST_QUADRANT;//三角形类型
     protected boolean rotate = false;//文字是否倾斜
     protected int mDegrees;//文字倾斜角度
-
-    @Override
+    public BaseShape(Context context){
+        initView(context);
+    }
     public void initView(Context context) {
         this.context = context;
         textPaint.setColor(context.getResources().getColor(R.color.paint_text_color));
@@ -55,6 +58,11 @@ public abstract class BaseShape extends Shape implements IShape {
         if (!TextUtils.isEmpty(text))
             textPaint.getTextBounds(this.text, 0, this.text.length(), textRect);
     }
+
+    @Override
+    public boolean checkMattePaint() {
+        return mattePaint!=null;
+    }
     public void setRect(Rect rect) {
         this.rect = rect;
     }
@@ -68,11 +76,6 @@ public abstract class BaseShape extends Shape implements IShape {
         this.mDegrees = mDegrees;
     }
 
-
-    public void setTriangleType(TriangleShape.TriangleType triangleType) {
-        this.triangleType = triangleType;
-    }
-
     public void setOffset(int offset) {
         this.offset = offset;
     }
@@ -80,4 +83,5 @@ public abstract class BaseShape extends Shape implements IShape {
     public void setScale(float scale) {
         this.scale = scale;
     }
+
 }

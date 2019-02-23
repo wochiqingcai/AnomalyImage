@@ -1,8 +1,9 @@
-package com.example.library;
+package com.example.library.shape;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.shapes.Shape;
 import android.text.TextUtils;
 
 /**
@@ -11,11 +12,9 @@ import android.text.TextUtils;
 
 
 public class QuadrangleShape extends BaseShape {
-
-    public QuadrangleShape(Context context) {
-        initView(context);
+    public QuadrangleShape(Context context){
+        super(context);
     }
-
     @Override
     public void draw(Canvas canvas, Paint paint) {
         if (rect == null || rect.width() <= 0 || rect.height() <= 0) {
@@ -76,5 +75,15 @@ public class QuadrangleShape extends BaseShape {
                 return true;
         }
         return false;
+    }
+
+    @Override
+    public Shape getShape() {
+        return null;
+    }
+
+    @Override
+    public void setTriangleType(TriangleShape.TriangleType triangleType) {
+
     }
 }

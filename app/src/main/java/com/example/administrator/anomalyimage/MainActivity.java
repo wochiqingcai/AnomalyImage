@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.library.factory.ShapeFactory;
 import com.example.library.ShapeImageView;
 
 public class MainActivity extends Activity {
@@ -53,6 +54,10 @@ public class MainActivity extends Activity {
         setTopClassifySize(headerViewHolder.sivFourthQuadrant,topClassifyWidth*2-margin);
         headerViewHolder.sivFourthQuadrant.setShap(ShapeFactory.getShape(7,classifyNames[7],this.getApplicationContext()));
 
+        initEvent();
+    }
+
+    private void initEvent() {
         headerViewHolder.sivFirstQuadrantRotate.setOnShapeImageClickListener(onShapeImageClickListener);
         headerViewHolder.sivThirdQuadrant.setOnShapeImageClickListener(onShapeImageClickListener);
         headerViewHolder.sivSquare.setOnShapeImageClickListener(onShapeImageClickListener);
