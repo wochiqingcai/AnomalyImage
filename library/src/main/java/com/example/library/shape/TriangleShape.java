@@ -6,11 +6,13 @@ import android.graphics.Paint;
 import android.graphics.drawable.shapes.Shape;
 import android.text.TextUtils;
 
+import com.example.library.proxy.IShape;
+
 /**
  * Created by lizw on 2018/4/10.
  */
 
-public class TriangleShape extends BaseShape {
+public class TriangleShape extends BaseShape implements IShape {
     protected TriangleShape.TriangleType triangleType=TriangleShape.TriangleType.TRIANGLE_TYPE_FIRST_QUADRANT;//三角形类型
     public enum TriangleType {
         TRIANGLE_TYPE_FIRST_QUADRANT, TRIANGLE_TYPE_SECOND_QUADRANT, TRIANGLE_TYPE_THIRD_QUADRANT, TRIANGLE_TYPE_SECOND_THIRD_QUADRANT, TRIANGLE_TYPE_FOURTH_QUADRANT
@@ -141,9 +143,5 @@ public class TriangleShape extends BaseShape {
 
     public void setTriangleType(TriangleShape.TriangleType triangleType) {
         this.triangleType = triangleType;
-    }
-    @Override
-    public Shape getShape() {
-        return null;
     }
 }

@@ -3,15 +3,16 @@ package com.example.library.shape;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.shapes.Shape;
 import android.text.TextUtils;
+
+import com.example.library.proxy.IShape;
 
 /**
  * Created by lizw on 2018/4/19.
  */
 
 
-public class QuadrangleShape extends BaseShape {
+public class QuadrangleShape extends BaseShape implements IShape {
     public QuadrangleShape(Context context){
         super(context);
     }
@@ -77,10 +78,6 @@ public class QuadrangleShape extends BaseShape {
         return false;
     }
 
-    @Override
-    public Shape getShape() {
-        return null;
-    }
 
     @Override
     public void setTriangleType(TriangleShape.TriangleType triangleType) {

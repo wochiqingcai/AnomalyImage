@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.library.factory.DynamicProxyShapeFactory;
 import com.example.library.factory.ShapeFactory;
 import com.example.library.ShapeImageView;
 
@@ -38,21 +39,21 @@ public class MainActivity extends Activity {
     private void initHeaderView() {
         int margin=getResources().getDimensionPixelSize(R.dimen.size_5_dip);
         setTopClassifySize(headerViewHolder.sivFirstQuadrantRotate,topClassifyWidth);
-        headerViewHolder.sivFirstQuadrantRotate.setShap(ShapeFactory.getShape(0,classifyNames[0],this.getApplicationContext()));
+        headerViewHolder.sivFirstQuadrantRotate.setShap(DynamicProxyShapeFactory.getShape(0,classifyNames[0],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivThirdQuadrant,topClassifyWidth*2-margin);
-        headerViewHolder.sivThirdQuadrant.setShap(ShapeFactory.getShape(1,classifyNames[1],this.getApplicationContext()));
+        headerViewHolder.sivThirdQuadrant.setShap(DynamicProxyShapeFactory.getShape(1,classifyNames[1],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivSquare,topClassifyWidth);
-        headerViewHolder.sivSquare.setShap(ShapeFactory.getShape(2,classifyNames[2],this.getApplicationContext()));
+        headerViewHolder.sivSquare.setShap(DynamicProxyShapeFactory.getShape(2,classifyNames[2],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivParallelogram,topClassifyWidth*2+margin,topClassifyWidth-margin);
-        headerViewHolder.sivParallelogram.setShap(ShapeFactory.getShape(3,classifyNames[3],this.getApplicationContext(),-(((float) topClassifyWidth-margin)/(topClassifyWidth*2+margin))));
+        headerViewHolder.sivParallelogram.setShap(DynamicProxyShapeFactory.getShape(3,classifyNames[3],this.getApplicationContext(),-(((float) topClassifyWidth-margin)/(topClassifyWidth*2+margin))));
         setTopClassifySize(headerViewHolder.sivSecondQuadrantRotate,topClassifyWidth);
-        headerViewHolder.sivSecondQuadrantRotate.setShap(ShapeFactory.getShape(4,classifyNames[4],this.getApplicationContext()));
+        headerViewHolder.sivSecondQuadrantRotate.setShap(DynamicProxyShapeFactory.getShape(4,classifyNames[4],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivSecondThirdQuadrant,topClassifyWidth*2);
-        headerViewHolder.sivSecondThirdQuadrant.setShap(ShapeFactory.getShape(5,classifyNames[5],this.getApplicationContext()));
+        headerViewHolder.sivSecondThirdQuadrant.setShap(DynamicProxyShapeFactory.getShape(5,classifyNames[5],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivSecondQuadrant,topClassifyWidth*2-margin);
-        headerViewHolder.sivSecondQuadrant.setShap(ShapeFactory.getShape(6,classifyNames[6],this.getApplicationContext()));
+        headerViewHolder.sivSecondQuadrant.setShap(DynamicProxyShapeFactory.getShape(6,classifyNames[6],this.getApplicationContext()));
         setTopClassifySize(headerViewHolder.sivFourthQuadrant,topClassifyWidth*2-margin);
-        headerViewHolder.sivFourthQuadrant.setShap(ShapeFactory.getShape(7,classifyNames[7],this.getApplicationContext()));
+        headerViewHolder.sivFourthQuadrant.setShap(DynamicProxyShapeFactory.getShape(7,classifyNames[7],this.getApplicationContext()));
 
         initEvent();
     }

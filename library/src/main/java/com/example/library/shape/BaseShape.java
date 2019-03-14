@@ -85,4 +85,8 @@ public abstract class BaseShape extends Shape implements IShape {
         this.scale = scale;
     }
 
+    @Override
+    public Shape getShape() {
+        return this;
+    }
 }

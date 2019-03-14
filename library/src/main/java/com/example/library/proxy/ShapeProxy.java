@@ -53,7 +53,7 @@ public class ShapeProxy implements IShape {
 
     @Override
     public Shape getShape() {
-        return (BaseShape)iShape;
+        return iShape.getShape();
     }
 
     @Override

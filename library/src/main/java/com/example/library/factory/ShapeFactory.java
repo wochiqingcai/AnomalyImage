@@ -2,19 +2,21 @@ package com.example.library.factory;
 
 import android.content.Context;
 
+import com.example.library.proxy.IShape;
 import com.example.library.proxy.ShapeProxy;
 import com.example.library.shape.QuadrangleShape;
 import com.example.library.shape.TriangleShape;
 
 /**
+ * 静态代理工厂
  * Created by lizw on 2018/9/21.
  */
 
 public class ShapeFactory {
-    public static ShapeProxy getShape(int index, String text, Context context) {
+    public static IShape getShape(int index, String text, Context context) {
        return getShape(index,text,context,0f);
     }
-    public static ShapeProxy getShape(int index, String text, Context context,float scale) {
+    public static IShape getShape(int index, String text, Context context,float scale) {
         ShapeProxy shapeProxy = new ShapeProxy();
         switch (index) {
             case 0://右下第一个，第一象限，正45度文字
